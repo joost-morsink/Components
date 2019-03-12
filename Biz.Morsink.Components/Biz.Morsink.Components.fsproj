@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Configurations>Debug;Release;Prerelease</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <VersionSuffix>A001</VersionSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Prerelease'">
+    <VersionSuffix>beta.1</VersionSuffix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="Interface.fs" />
+    <Compile Include="Containers.fs" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <Compile Include="Interop.fs" />
+  </ItemGroup>
+</Project>
